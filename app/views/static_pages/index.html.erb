@@ -2,14 +2,18 @@
   <tr>
     <th>Name</th>
     <th>TreeoCount</th>
+    <th>Goal</th>
   </tr>
-  <% @data.each do |name, count| %>
+  <% @data.each_with_index do |(name, count), idx| %>
     <tr>
       <td>
         <%= name %>
       </td>
       <td>
         <%= count %>
+      </td>
+      <td>
+        <%= @goals[idx]  %>
       </td>
     </tr>
   <% end %>
