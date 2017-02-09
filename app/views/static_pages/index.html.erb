@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>TreeoCount</th>
+  </tr>
+  <% @data.each do |name, count| %>
+    <tr>
+      <td>
+        <%= name %>
+      </td>
+      <td>
+        <%= count %>
+      </td>
+    </tr>
+  <% end %>
+</table>
