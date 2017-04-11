@@ -1,9 +1,11 @@
+require 'rest-client'
+
 class StaticPagesController < ApplicationController
   def index
     @goals = [300, 300, 300, 300, 150, 150, 100, 100, 100, 50, 0, 0]
     @names = []
     @counts = []
-    data = Net::HTTP.get('treeo.technology', '/__totals')
+    data = Net::HTTP.get('treeo.vote', '/__totals')
     html_doc = Nokogiri::HTML(data)
     array = html_doc.css('pre').children.text.split("\n")
     array.each do |a|
